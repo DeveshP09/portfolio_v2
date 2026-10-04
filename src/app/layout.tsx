@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
   title: "Devesh's — Portfolio",
@@ -20,8 +15,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn("dark h-full antialiased", jetbrainsMono.variable, "font-sans", geist.variable)}>
-      <body className="min-h-full flex flex-col font-mono" suppressHydrationWarning>
+    <html lang="en" className={cn("dark h-full antialiased font-sans", geistSans.variable, geistMono.variable)}>
+      <body className="min-h-full flex flex-col font-sans antialiased" suppressHydrationWarning>
         {children}
       </body>
     </html>

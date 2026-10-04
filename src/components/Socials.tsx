@@ -1,4 +1,4 @@
-import { FileDown } from "lucide-react";
+import { FileDown, Mail, Phone } from "lucide-react";
 import {
   Bluesky,
   Github,
@@ -17,6 +17,9 @@ const socials: Social[] = [
   { label: "GitHub", href: "https://github.com/DeveshP09", icon: Github },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/devesh-patil-113036246/", icon: Linkedin },
   { label: "X", href: "https://x.com/DeveshP05673343", icon: X },
+  { label: "Email deveshpatil162@gmail.com", href: "mailto:deveshpatil162@gmail.com", icon: Mail },
+  { label: "Call +91 87672 63626", href: "tel:+918767263626", icon: Phone },
+
   // { label: "Bluesky", href: "#", icon: Bluesky },
   // { label: "Medium", href: "#", icon: Medium },
   // { label: "Substack", href: "#", icon: Substack },
@@ -30,19 +33,20 @@ export function Socials() {
         <a
           key={label}
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
+          // mailto:/tel: links open the mail/phone app, so only web links get a new tab
+          {...(href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
           aria-label={label}
+          title={label}
           className="text-muted-foreground hover:text-foreground transition-colors"
         >
           <Icon size={20} />
         </a>
       ))}
       <a
-        href="/resume/Devesh_patil_frontend_engineer.pdf"
+        href="/resume/devesh_patil_frontend_engineer-.pdf"
         download="Devesh-Patil-Resume.pdf"
         aria-label="Download resume"
-        className="ml-2 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1 text-xs text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+        className="ml-2 inline-flex items-center gap-1.5 rounded-md border border-border px-2.5 py-1 font-mono text-xs text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
       >
         <FileDown size={20} aria-hidden />
         resume

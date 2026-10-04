@@ -1,5 +1,4 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Skills } from "./Skills";
 import { Socials } from "./Socials";
 
 export function Hero() {
@@ -9,8 +8,8 @@ export function Hero() {
         Hey, I&apos;m Devesh <span aria-hidden>👋</span>
       </h1>
 
-      <div className="flex items-start gap-3 sm:gap-4">
-        <Avatar className="size-16 shrink-0 rounded-lg border border-border bg-muted/10 after:rounded-lg sm:size-20">
+      <div className="flex items-center gap-3 sm:items-start sm:gap-4">
+        <Avatar className="size-20 shrink-0 rounded-lg border border-border bg-muted/10 after:rounded-lg sm:size-28">
           <AvatarImage
             src="/images/devesh_photo.jpeg"
             alt="Devesh Patil"
@@ -18,17 +17,12 @@ export function Hero() {
           />
           <AvatarFallback className="rounded-lg">DP</AvatarFallback>
         </Avatar>
-        <div className="min-w-0 space-y-2 text-white">
-          <p className="text-sm leading-relaxed">
-            I&apos;m a <span className="font-medium">software engineer</span> who enjoys
-            building <span className="font-medium">small, sharp tools</span> for the web
-            and mobile. currently exploring{" "}
-            <span className="font-medium">typescript</span>,{" "}
-            <span className="font-medium">react native</span>, and{" "}
-            <span className="font-medium">systems design</span>, along with the occasional
-            side quest.
+        <div className="min-w-0 space-y-3">
+          <p className="text-sm leading-relaxed text-foreground/90 sm:text-base">
+            <span className="font-bold">Software Engineer</span> with <span className="font-bold">1.5+ years</span> of experience AI native building web and mobile applications using <span className="font-bold">React.js</span>, <span className="font-bold">React Native</span>, and <span className="font-bold">Node.js</span>. Currently learning{" "}
+            <span className="font-bold">typescript</span> and <span className="font-bold">AI/LLM</span> technologies to build innovative solutions.
           </p>
-          <p className="flex items-center gap-1 text-sm">
+          <p className="flex items-center gap-1 font-mono text-xs sm:text-sm">
             <span>Mumbai, India</span>
             <span aria-hidden>📍</span>
           </p>
@@ -36,7 +30,6 @@ export function Hero() {
       </div>
 
       <Socials />
-      <Skills />
     </section>
   );
 }

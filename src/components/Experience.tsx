@@ -30,17 +30,30 @@ const EXPERIENCES: ExperienceItem[] = [
     location: "Mumbai",
     period: "July 2025 - Present",
     description:
-      "Own and optimize core front-end modules of a B2B sales platform used by FMCG manufacturers across India — spanning user permissions, orders, sales targets, and invoicing. As project SPOC, built an HRMS module for field-sales management, added real-time location tracking via the Google Maps API and WhatsApp-based targeted marketing, and architected an in-app chat that improved salesperson productivity by ~30%. Also lifted app performance ~40% through Webpack bundle and rendering optimizations.",
+      "Own and optimize core front-end modules of a B2B sales platform used by FMCG manufacturers across India — user permissions, orders, sales targets, and invoicing.",
+    points: [
+      { text: "Architected a real-time in-app chat using WebSockets for field sales teams, replacing external tools and boosting sales-team productivity by 30%." },
+      { text: "Built an HRMS module for field sales with live location tracking (Google Maps API) and automated HR workflows." },
+      { text: "Integrated WhatsApp Business APIs to power targeted marketing campaigns reaching 1,000+ retailers." },
+      { text: "Built a multi-level Bill of Materials (BOM) module with nested components, quantities, and automated cost roll-ups." },
+      { text: "Owned the application end-to-end as SPOC, coordinating requirements and on-time releases across teams." },
+      { text: "Improved load performance by 40% by eliminating unnecessary re-renders in data-heavy modules and optimizing the Webpack bundle." },
+    ],
     logo: "/logos/publicis-sapient.svg",
     initials: "R",
   },
-   {
+  {
     role: "Frontend Engineer Intern",
     company: "Riggle",
     location: "Mumbai",
     period: "April 2025 - June 2025",
     description:
-      "Worked across multiple modules of the product, collaborating with product and design teams to take features from requirements to release. Revamped the company's SEO-optimized landing page, engineered a self-onboarding flow with an integrated payment gateway to reduce manual intervention, and built interactive analytics dashboards surfacing real-time insights and sales summaries for data-driven decisions.",
+      "Collaborated with product and design teams to validate business requirements, improve user experience, and ship features smoothly across multiple modules.",
+    points: [
+      { text: "Revamped the company's landing page with SEO best practices, improving its search visibility and overall appeal." },
+      { text: "Engineered a self-onboarding system across multiple modules with a secure payment gateway, reducing manual onboarding effort." },
+      { text: "Built and optimized interactive analytics dashboards that give businesses real-time insights and sales summaries for data-driven decisions." },
+    ],
     logo: "/logos/publicis-sapient.svg",
     initials: "R",
   },
@@ -49,7 +62,7 @@ const EXPERIENCES: ExperienceItem[] = [
 export function Experience() {
   return (
     <div className="space-y-5">
-      <h2 className="text-lg font-bold text-foreground underline underline-offset-[6px] decoration-1">
+      <h2 className="text-lg font-bold tracking-tight text-foreground underline underline-offset-[6px] decoration-1">
         Work Experience
       </h2>
       <div className="space-y-4">
@@ -89,11 +102,11 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
               className="transition-transform group-data-[panel-open]/exp:rotate-90"
             />
           </p>
-          <p className="text-sm text-foreground">
+          <p className="font-mono text-sm text-foreground">
             {item.company}{" "}
             <span className="text-muted-foreground">· {item.location}</span>
           </p>
-          <p className="text-sm text-muted-foreground">{item.period}</p>
+          <p className="font-mono text-sm text-muted-foreground">{item.period}</p>
         </div>
       </CollapsibleTrigger>
 

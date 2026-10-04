@@ -30,6 +30,20 @@ const PROJECTS: Project[] = [
     github: "#",
   },
   {
+    title: "ToolKart",
+    description:
+      "ToolKart is a marketplace for premium AI & SaaS subscriptions at discounted prices. Users can browse tools by category (AI & automation, coding, cloud & security, API credits), search products, switch between USD and INR pricing, and buy directly via WhatsApp.",
+    images: ["/images/toolkart.png"],
+    live: "https://toolkart.io/",
+  },
+  {
+    title: "Devesh Shop",
+    description:
+      "A direct-to-consumer (D2C) store website that lists products across categories, best sellers, and new arrivals, with product search, a cart, and a complete order flow.",
+    live: "https://devesh-d2c.netlify.app/",
+    github: "https://github.com/DeveshP09/D2C-E-commerce"
+  },
+  {
     title: "E-Commerce Platform",
     description:
       "An e-commerce platform for organic product sales and created a marketplace for local farmers.",
@@ -41,7 +55,7 @@ const PROJECTS: Project[] = [
 export function Projects() {
   return (
     <div className="space-y-5">
-      <h2 className="text-lg font-bold text-foreground underline underline-offset-[6px] decoration-1">
+      <h2 className="text-lg font-bold tracking-tight text-foreground underline underline-offset-[6px] decoration-1">
         Projects
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
